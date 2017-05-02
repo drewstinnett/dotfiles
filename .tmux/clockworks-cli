@@ -1,0 +1,22 @@
+# start a new session
+new -d -c ~/src/clockworks-cli -s clockworks-cli -n vim "vim; exec bash -l"
+# ensure it is selected
+attach -t clockworks-cli
+# split the first window in half
+#splitw -h -p 50
+# link the xmpp window in session meta to window 1 in the new session
+#link-window -s meta:xmpp -t 1
+# put this at the first window
+#swap-window -s 1 -t 0
+# more stuff
+#neww -n "console" "bash -l -c 'rails console; exec bash -l'"
+#neww -n "server" "bash -l -c 'rails server -p 3001; exec bash -l'"
+neww -n "shell"
+neww -n "devliz"
+neww -n "test"
+neww -n "PROD"
+# make it more obvious when we use the PROD window
+#set-window-option window-status-current-bg red
+#set window-style 'fg=black,bg=colour229'
+# link the meta whatev window at 9
+#link-window -s meta:whatev -t 9
