@@ -13,11 +13,13 @@ plugins=(autojump git svn python ssh-agent brew brew-cask colored-man docker gnu
 
 export EDITOR=vim
 #export VMWARE_SERVER=vmware-test.oit.duke.edu
-export HOMEBREW_GITHUB_API_TOKEN=$(lpass show HOMEBREW_GITHUB_API_TOKEN --password)
-
+#export HOMEBREW_GITHUB_API_TOKEN=$(lpass show HOMEBREW_GITHUB_API_TOKEN --password)
 ## Helpful aliases
+#export HOMESERVER=$(lpass show homeserver --notes)
+#export FAVORITEHOST=$(lpass show favoritehost --notes)
+
 alias ppjson="python -mjson.tool"
-alias sshhome="ssh $(lpass show home-ssh --field=host)"
+
 alias ag="ag --pager='less -FXRS'"
 alias nkssh='ssh -o PubkeyAuthentication=no'
 alias grep='nocorrect grep --color=auto'
