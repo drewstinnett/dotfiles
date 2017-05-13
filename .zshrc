@@ -28,7 +28,9 @@ alias whatd_i_do_last_month="task end.after:today-5wk completed rc.detection:off
 alias whatd_i_do_last_day="task end.after:today-1d completed rc.detection:off rc.defaultwidth:184"
 alias setup_vim='git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle; vim +BundleInstall +qall'
 alias use_clockworks_test='export CLOCKWORKS_BASE_URL=https://clockworks-test.oit.duke.edu'
-alias update_hosts_completion='cmdb-cli.py ssi-windows > ~/.ssi-windows'
+alias use_clockworks_prod='export CLOCKWORKS_BASE_URL=https://clockworks.oit.duke.edu'
+alias use_clockworks_liz='export CLOCKWORKS_BASE_URL=https://clockworks-dev-liz.oit.duke.edu'
+#alias update_hosts_completion='cmdb-cli.py ssi-windows > ~/.ssi-windows'
 
 
 ## Setup PATH
@@ -40,7 +42,19 @@ export PATH=$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/b
 export PATH=$PATH:$HOME/src/sysadmin-scripts:$HOME/android/sdk/platform-tools:$HOME/android/sdk/tools
 export PATH=$PATH:/var/lib/gems/1.8/bin:/sbin:/usr/sbin:/var/lib/gems/1.8/bin
 export PATH=$PATH:/Users/drewstinnett/node_modules/.bin
-export PATH=$PATH:/Users/drewstinnett/src/cmdb-cli/scripts
+export PATH=$PATH:$HOME/src/duke-rdp
+#export PATH=$PATH:/Users/drewstinnett/src/cmdb-cli/scripts
 
 ## Iterm2 Integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+h=()
+if [[ -r ~/.ssh/config ]]; then
+  h=($h ${${${(@M)${(f)"$(cat ~/.ssh/config)"}:#Host *}#Host }:#*[*?]*})
+fi
+h=($h ${${${(f)"$(cmdb-cli.py ssi-linux || true)"}%%\ *}%%,*}) 2>/dev/null
+zstyle ':completion:*:ssh:*' hosts $h
+
+wh=()
+wh=($h ${${${(f)"$(cmdb-cli.py ssi-windows || true)"}%%\ *}%%,*}) 2>/dev/null
+zstyle ':completion:*:/Users/drewstinnett/bin/connect_windows.sh:*' hosts $h
