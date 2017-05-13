@@ -21,69 +21,60 @@ set ruler
 " Vundle stuff
 set nocompatible
 filetype off                   " required!
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" let Vundle manage Vundle
-" required! 
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-haml'
-Plugin 'tpope/vim-bundler'
-Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-notes'
-Plugin 'natw/keyboard_cat.vim'
-Plugin 'gmarik/Vundle.vim'
-Plugin 'tpope/vim-markdown'
-Plugin 'hynek/vim-python-pep8-indent'
-Plugin 'nvie/vim-flake8'
-Plugin 'python.vim'
-Plugin 'spacehi.vim'
-Plugin 'reinh/vim-makegreen'
-Plugin 'chase/vim-ansible-yaml'
+"set rtp+=~/.vim/bundle/Vundle.vim
+call plug#begin()
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-haml'
+Plug 'tpope/vim-bundler'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-notes'
+Plug 'natw/keyboard_cat.vim'
+Plug 'gmarik/Vundle.vim'
+Plug 'tpope/vim-markdown'
+Plug 'hynek/vim-python-pep8-indent'
+Plug 'nvie/vim-flake8'
+"Plug 'python'
+"Plug 'spacehi'
+Plug 'reinh/vim-makegreen'
+Plug 'chase/vim-ansible-yaml'
 "Plugin 'gmarik/vundle'
-Plugin 'Raimondi/delimitMate'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'taglist.vim'
-Plugin 'django.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'Gundo'
-Plugin 'acustodioo/vim-tmux'
-Plugin 'Lokaltog/vim-easymotion'
+Plug 'Raimondi/delimitMate'
+Plug 'altercation/vim-colors-solarized'
+"Plug 'django'
+"Plug 'Gundo'
+Plug 'acustodioo/vim-tmux'
+Plug 'Lokaltog/vim-easymotion'
 " TODO: Learn how to use this, may be useful for puffers
-Plugin 'kien/ctrlp.vim'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'vcscommand.vim'
-Plugin 'Lokaltog/vim-powerline'
+"Plug 'kien/ctrlp.vim'
+Plug 'nathanaelkane/vim-indent-guides'
+"Plug 'vcscommand.vim'
+Plug 'Lokaltog/vim-powerline'
 " Plugin 'kana/vim-fakeclip'
 
 " Colors
-Plugin 'nanotech/jellybeans.vim'
-Plugin 'desert256.vim'
+Plug 'nanotech/jellybeans.vim'
+Plug 'brafales/vim-desert256'
 
 " Snipmate stuff
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
 " Plugin "honza/snipmate-snippets"
-Plugin 'garbas/vim-snipmate'
+Plug 'garbas/vim-snipmate'
 
 " Commenting
-Plugin 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdcommenter'
 
 " Syntax checking
 " Make sure pylint is installed
-Plugin 'scrooloose/syntastic'
+Plug 'scrooloose/syntastic'
 
 " Puppet syntax highlighting
-Plugin 'godlygeek/tabular'
-Plugin 'rodjek/vim-puppet'
+Plug 'godlygeek/tabular'
+Plug 'rodjek/vim-puppet'
 
-call vundle#end()  
+call plug#end()  
 syntax on
 filetype plugin indent on     " required!
-
-" Nerdtree stuff
-let NERDTreeQuitOnOpen = 1
-let g:syntastic_python_checkers = ['pylint']
-"let g:syntastic_python_checkers = ['flake8']
 
 " Use a better leader for vcs
 let VCSCommandMapPrefix="<leader>x"
