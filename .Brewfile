@@ -1,6 +1,7 @@
 tap 'caskroom/cask' 
 
 brew 'ansible'
+brew 'coreutils'
 brew 'cowsay'
 brew 'dos2unix'
 brew 'jq'
@@ -41,6 +42,8 @@ cask 'regexhibit'
 cask 'virtualbox'
 cask 'xquartz'
 cask 'docker'
+cask 'spectacle'
+
 
 mas 'LastPass', id: 926036361
 
