@@ -39,11 +39,10 @@ if which brew &>/dev/null; then
 fi
 export ANDROID_HOME=/usr/local/opt/android-sdk
 export PATH=$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
-export PATH=$PATH:$HOME/src/sysadmin-scripts:$HOME/android/sdk/platform-tools:$HOME/android/sdk/tools
 export PATH=$PATH:/var/lib/gems/1.8/bin:/sbin:/usr/sbin:/var/lib/gems/1.8/bin
 export PATH=$PATH:/Users/drewstinnett/node_modules/.bin
+export PATH=$PATH:$HOME/src-remote/sysadmin-scripts
 export PATH=$PATH:$HOME/src/duke-rdp
-#export PATH=$PATH:/Users/drewstinnett/src/cmdb-cli/scripts
 
 ## Iterm2 Integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
