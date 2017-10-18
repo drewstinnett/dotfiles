@@ -1,8 +1,8 @@
 
 
 ## Setup Oh my ZSH
-ZSH_THEME="terminalparty"
-#ZSH_THEME="aussiegeek"
+#ZSH_THEME="terminalparty"
+ZSH_THEME="aussiegeek"
 #ZSH_THEME="pie"
 
 ZSH=$HOME/.oh-my-zsh
@@ -43,6 +43,7 @@ export PATH=$PATH:/var/lib/gems/1.8/bin:/sbin:/usr/sbin:/var/lib/gems/1.8/bin
 export PATH=$PATH:/Users/drewstinnett/node_modules/.bin
 export PATH=$PATH:$HOME/src-remote/sysadmin-scripts
 export PATH=$PATH:$HOME/src/duke-rdp
+export PATH=$PATH:$HOME/src/sysadmin-scripts
 
 ## Iterm2 Integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
@@ -51,9 +52,17 @@ h=()
 if [[ -r ~/.ssh/config ]]; then
   h=($h ${${${(@M)${(f)"$(cat ~/.ssh/config)"}:#Host *}#Host }:#*[*?]*})
 fi
-h=($h ${${${(f)"$(cmdb-cli.py ssi-linux || true)"}%%\ *}%%,*}) 2>/dev/null
-zstyle ':completion:*:ssh:*' hosts $h
+#h=($h ${${${(f)"$(cmdb-cli.py ssi-linux || true)"}%%\ *}%%,*}) 2>/dev/null
+#zstyle ':completion:*:ssh:*' hosts $h
 
-wh=()
-wh=($h ${${${(f)"$(cmdb-cli.py ssi-windows || true)"}%%\ *}%%,*}) 2>/dev/null
-zstyle ':completion:*:/Users/drewstinnett/bin/connect_windows.sh:*' hosts $h
+#wh=()
+#wh=($h ${${${(f)"$(cmdb-cli.py ssi-windows || true)"}%%\ *}%%,*}) 2>/dev/null
+#zstyle ':completion:*:/Users/drewstinnett/bin/connect_windows.sh:*' hosts $h
+
+#export VAULT_ADDR=https://vault-dev.oit.duke.edu:8200
+
+eval "$(thefuck --alias)"
+
+alias vim_plugin_install="vim +PlugInstall +qall"
+alias vim_plugin_update="vim +PlugUpdate +qall"
+export ANSIBLE_NOCOWS=1

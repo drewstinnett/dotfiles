@@ -23,7 +23,14 @@ set nocompatible
 filetype off                   " required!
 "set rtp+=~/.vim/bundle/Vundle.vim
 call plug#begin()
+" Google code junk
+Plug 'google/vim-maktaba'
+Plug 'google/vim-codefmt'
+Plug 'google/vim-glaive'
+Plug 'https://raw.githubusercontent.com/google/styleguide/gh-pages/google_python_style.vim'
+
 Plug 'tpope/vim-rails'
+Plug 'ekalinin/Dockerfile'
 Plug 'tpope/vim-haml'
 Plug 'tpope/vim-bundler'
 Plug 'xolox/vim-misc'
@@ -33,14 +40,13 @@ Plug 'gmarik/Vundle.vim'
 Plug 'tpope/vim-markdown'
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'nvie/vim-flake8'
-"Plug 'python'
-"Plug 'spacehi'
+Plug 'vim-scripts/python'
+Plug 'vim-scripts/spacehi'
 Plug 'reinh/vim-makegreen'
 Plug 'chase/vim-ansible-yaml'
-"Plugin 'gmarik/vundle'
 Plug 'Raimondi/delimitMate'
 Plug 'altercation/vim-colors-solarized'
-"Plug 'django'
+Plug 'vim-scripts/django'
 "Plug 'Gundo'
 Plug 'acustodioo/vim-tmux'
 Plug 'Lokaltog/vim-easymotion'
@@ -65,7 +71,7 @@ Plug 'garbas/vim-snipmate'
 Plug 'scrooloose/nerdcommenter'
 
 " Syntax checking
-" Make sure pylint is installed
+" Make sure pylint or flake8 is installed
 Plug 'scrooloose/syntastic'
 
 " Puppet syntax highlighting
@@ -73,6 +79,7 @@ Plug 'godlygeek/tabular'
 Plug 'rodjek/vim-puppet'
 
 call plug#end()  
+call glaive#Install()
 syntax on
 filetype plugin indent on     " required!
 
@@ -163,7 +170,7 @@ colorscheme solarized
 "
 " Highlight past 80 characters
 autocmd BufEnter * highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-autocmd BufEnter * match OverLength /\%101v.*/
+autocmd BufEnter * match OverLength /\%79v.*/
 
 " Really write this junk
 cmap w!! w !sudo tee % >/dev/null       
@@ -180,3 +187,14 @@ let g:Powerline_symbols = 'fancy'
 
 "autocmd BufNewFile,BufRead *.py compiler nose
 
+augroup autoformat_settings
+  autocmd FileType bzl AutoFormatBuffer buildifier
+  autocmd FileType c,cpp,proto,javascript AutoFormatBuffer clang-format
+  autocmd FileType dart AutoFormatBuffer dartfmt
+  autocmd FileType go AutoFormatBuffer gofmt
+  autocmd FileType gn AutoFormatBuffer gn
+  autocmd FileType html,css,json AutoFormatBuffer js-beautify
+  autocmd FileType java AutoFormatBuffer google-java-format
+  autocmd FileType python AutoFormatBuffer yapf
+  " Alternative: autocmd FileType python AutoFormatBuffer autopep8
+augroup END

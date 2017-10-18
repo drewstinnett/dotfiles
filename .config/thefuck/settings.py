@@ -20,4 +20,4 @@
 # priority = {}
 # history_limit = None
 # env = {'LANG': 'C', 'LC_ALL': 'C', 'GIT_TRACE': '1'}
-#debug = True
+# debug = True
