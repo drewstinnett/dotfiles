@@ -22,63 +22,64 @@ set ruler
 set nocompatible
 filetype off                   " required!
 "set rtp+=~/.vim/bundle/Vundle.vim
-call plug#begin()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 " Google code junk
-Plug 'google/vim-maktaba'
-Plug 'google/vim-codefmt'
-Plug 'google/vim-glaive'
-Plug 'https://raw.githubusercontent.com/google/styleguide/gh-pages/google_python_style.vim'
+Plugin 'google/vim-maktaba'
+Plugin 'google/vim-codefmt'
+Plugin 'google/vim-glaive'
+Plugin 'https://raw.githubusercontent.com/google/styleguide/gh-pages/google_python_style.vim'
 
-Plug 'tpope/vim-rails'
-Plug 'ekalinin/Dockerfile'
-Plug 'tpope/vim-haml'
-Plug 'tpope/vim-bundler'
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-notes'
-Plug 'natw/keyboard_cat.vim'
-Plug 'gmarik/Vundle.vim'
-Plug 'tpope/vim-markdown'
-Plug 'hynek/vim-python-pep8-indent'
-Plug 'nvie/vim-flake8'
-Plug 'vim-scripts/python'
-Plug 'vim-scripts/spacehi'
-Plug 'reinh/vim-makegreen'
-Plug 'chase/vim-ansible-yaml'
-Plug 'Raimondi/delimitMate'
-Plug 'altercation/vim-colors-solarized'
-Plug 'vim-scripts/django'
+Plugin 'tpope/vim-rails'
+Plugin 'ekalinin/Dockerfile'
+Plugin 'tpope/vim-haml'
+Plugin 'tpope/vim-bundler'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-notes'
+Plugin 'natw/keyboard_cat.vim'
+Plugin 'gmarik/Vundle.vim'
+Plugin 'tpope/vim-markdown'
+Plugin 'hynek/vim-python-pep8-indent'
+Plugin 'nvie/vim-flake8'
+Plugin 'vim-scripts/python'
+Plugin 'vim-scripts/spacehi'
+Plugin 'reinh/vim-makegreen'
+Plugin 'chase/vim-ansible-yaml'
+Plugin 'Raimondi/delimitMate'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'vim-scripts/django'
 "Plug 'Gundo'
-Plug 'acustodioo/vim-tmux'
-Plug 'Lokaltog/vim-easymotion'
+Plugin 'acustodioo/vim-tmux'
+Plugin 'Lokaltog/vim-easymotion'
 " TODO: Learn how to use this, may be useful for puffers
 "Plug 'kien/ctrlp.vim'
-Plug 'nathanaelkane/vim-indent-guides'
+Plugin 'nathanaelkane/vim-indent-guides'
 "Plug 'vcscommand.vim'
-Plug 'Lokaltog/vim-powerline'
+Plugin 'Lokaltog/vim-powerline'
 " Plugin 'kana/vim-fakeclip'
 
 " Colors
-Plug 'nanotech/jellybeans.vim'
-Plug 'brafales/vim-desert256'
+Plugin 'nanotech/jellybeans.vim'
+Plugin 'brafales/vim-desert256'
 
 " Snipmate stuff
-Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'tomtom/tlib_vim'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
 " Plugin "honza/snipmate-snippets"
-Plug 'garbas/vim-snipmate'
+Plugin 'garbas/vim-snipmate'
 
 " Commenting
-Plug 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdcommenter'
 
 " Syntax checking
 " Make sure pylint or flake8 is installed
-Plug 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 
 " Puppet syntax highlighting
-Plug 'godlygeek/tabular'
-Plug 'rodjek/vim-puppet'
+Plugin 'godlygeek/tabular'
+Plugin 'rodjek/vim-puppet'
 
-call plug#end()  
+call vundle#end()  
 call glaive#Install()
 syntax on
 filetype plugin indent on     " required!

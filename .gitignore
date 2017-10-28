@@ -1,0 +1,5 @@
+*.swp
+.stevedore/conf
+.stevedore/logs
+.stevedore/backup
+*.pyc
