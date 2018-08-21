@@ -1,6 +1,10 @@
+[alias]
+    pp = !git pull && git push
 [user]
-	name = drews@duke.edu
-	email = drews@duke.edu
+	name = Drew Stinnett
+	email = drew.stinnett@duke.edu
+    #signingkey = 2C524707F10DC88F350A78FC719FD7B59B142A28
+    signingkey = 17D832F6B6694E31BDEE47156DEF1CE9ADC88467
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
@@ -8,3 +12,5 @@
 	required = true
 [core]
 	excludesfile = ~/.gitignore
+[commit]
+	gpgsign = true

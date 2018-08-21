@@ -1,4 +1,4 @@
-
+.vimrc 
 
 ## Setup Oh my ZSH
 #ZSH_THEME="terminalparty"
@@ -43,7 +43,10 @@ export PATH=$PATH:/var/lib/gems/1.8/bin:/sbin:/usr/sbin:/var/lib/gems/1.8/bin
 export PATH=$PATH:/Users/drewstinnett/node_modules/.bin
 export PATH=$PATH:$HOME/src-remote/sysadmin-scripts
 export PATH=$PATH:$HOME/src/duke-rdp
+export PATH=$PATH:/Users/drews/go/bin
 export PATH=$PATH:$HOME/src/sysadmin-scripts
+export PATH=$PATH:$HOME/src/duke-vault-helpers/scripts
+export PATH=$PATH:${HOME}/src/pynetid/scripts
 
 ## Iterm2 Integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
@@ -59,10 +62,40 @@ fi
 #wh=($h ${${${(f)"$(cmdb-cli.py ssi-windows || true)"}%%\ *}%%,*}) 2>/dev/null
 #zstyle ':completion:*:/Users/drewstinnett/bin/connect_windows.sh:*' hosts $h
 
-#export VAULT_ADDR=https://vault-dev.oit.duke.edu:8200
+export VAULT_ADDR=https://vault-systems.oit.duke.edu
 
 eval "$(thefuck --alias)"
 
 alias vim_plugin_install="vim +PlugInstall +qall"
 alias vim_plugin_update="vim +PlugUpdate +qall"
 export ANSIBLE_NOCOWS=1
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/vault vault
+
+export CONSUL_HTTP_ADDR=consul-sd.oit.duke.edu:8443
+export CONSUL_HTTP_SSL=true
+export CONSUL_CACERT=~/ca_certs/consul-sd.oit.duke.edu.ca
+
+
+export KOPS_CLUSTER_NAME=drubernetes.k8s.local
+export KOPS_STATE_STORE=s3://drubernetes-kops-state-store
+export AWS_ACCESS_KEY=$(crudini --get ~/.aws/credentials default aws_access_key_id)
+export AWS_SECRET_KEY=$(crudini --get ~/.aws/credentials default aws_secret_access_key)
+export DUKE_OPENSHIFT_VAULT_TOKEN=$(cat ~/.vault-token)
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+
+complete -o nospace -C /usr/local/Cellar/terraform/0.11.7/bin/terraform terraform
+
+source <(oc completion zsh)
+
+source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
+PROMPT='$(kube_ps1)'$PROMPT
+
+precmd() {
+  # sets the tab title to current dir
+  echo -ne "\e]1;${PWD##*/}\a"
+}
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
