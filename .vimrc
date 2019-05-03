@@ -6,6 +6,7 @@ set et
 set ai
 set incsearch
 set nonu
+set encoding=utf-8
 
 set cul " Highligth the current line
 
@@ -18,17 +19,26 @@ set nohlsearch
 set viminfo=""
 set ruler
 
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
+
 " Vundle stuff
 set nocompatible
 filetype off                   " required!
 "set rtp+=~/.vim/bundle/Vundle.vim
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+Plugin 'lifepillar/vim-solarized8'
+Plugin 'morhetz/gruvbox'
 " Google code junk
 Plugin 'google/vim-maktaba'
 Plugin 'google/vim-codefmt'
 Plugin 'google/vim-glaive'
-
+Plugin 'dhruvasagar/vim-marp'
+Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-rails'
 "Plugin 'ekalinin/Dockerfile'
 Plugin 'tpope/vim-haml'
@@ -72,7 +82,13 @@ Plugin 'scrooloose/nerdcommenter'
 
 " Syntax checking
 " Make sure pylint or flake8 is installed
-Plugin 'scrooloose/syntastic'
+" Plugin 'scrooloose/syntastic'
+Plugin 'w0rp/ale'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+let b:ale_fixers = ['autopep8', 'black']
+let g:ale_sign_warning = '🤔'
+let g:ale_sign_error = '🤬'
 
 " Puppet syntax highlighting
 Plugin 'godlygeek/tabular'
@@ -141,6 +157,9 @@ let Tlist_Show_One_File = 1
 set wildmenu
 set wildignore=*.o,*~,*.pyc
 
+map gn :bn<cr>
+map gp :bp<cr>
+map gd :bd<cr>  
 
 autocmd Filetype yaml setlocal ts=2 sts=2 sw=2
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
@@ -151,7 +170,7 @@ syn match TAB_CHAR "\t"
 hi link TAB_CHAR Error
 
 " For puppet manifests
-let loaded_syntastic_yaml_jsyaml_checker = 1
+" let loaded_syntastic_yaml_jsyaml_checker = 1
 autocmd FileType puppet SpaceHi
 autocmd FileType puppet :setlocal sw=2 ts=2 sts=2 " Two spaces for Puppet files "
 autocmd BufWritePre *.pp :%s/\s\+$//e
@@ -165,8 +184,9 @@ let g:solarized_underline = 1
 let g:solarized_italic = 1
 " let g:solarized_visibility =  "low"
 syntax enable
-set background=dark
-colorscheme solarized
+set background=light
+colorscheme solarized8
+" colorscheme gruvbox
 "
 " Highlight past 80 characters
 autocmd BufEnter * highlight OverLength ctermbg=red ctermfg=white guibg=#592929
@@ -184,6 +204,9 @@ set showmode
 " Pretty statusline
 set laststatus=2
 let g:Powerline_symbols = 'fancy'
+
+" let g:syntastic_yaml_checkers = ['yamllint']
+" let g:syntastic_python_checkers = ['flake8']
 
 "autocmd BufNewFile,BufRead *.py compiler nose
 
@@ -212,6 +235,10 @@ function! WrapForTmux(s)
   return tmux_start . substitute(a:s, "\<Esc>", "\<Esc>\<Esc>", 'g') . tmux_end
 endfunction
 
+" Airline config
+let g:airline#extensions#tabline#enabled = 1
+"let g:airline_powerline_fonts = 1
+
 let &t_SI .= WrapForTmux("\<Esc>[?2004h")
 let &t_EI .= WrapForTmux("\<Esc>[?2004l")
 
@@ -220,5 +247,9 @@ function! XTermPasteBegin()
   set paste
   return ""
 endfunction
+
+" CtrlP
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlPMixed'
 
 inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()

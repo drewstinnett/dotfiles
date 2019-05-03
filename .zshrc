@@ -1,15 +1,31 @@
-.vimrc 
-
 ## Setup Oh my ZSH
 #ZSH_THEME="terminalparty"
 ZSH_THEME="aussiegeek"
 #ZSH_THEME="pie"
+#
+HISTFILE="$HOME/.zsh_history"
+HISTSIZE=10000000
+SAVEHIST=10000000
+setopt BANG_HIST                 # Treat the '!' character specially during expansion.
+setopt EXTENDED_HISTORY          # Write the history file in the ":start:elapsed;command" format.
+setopt INC_APPEND_HISTORY        # Write to the history file immediately, not when the shell exits.
+setopt SHARE_HISTORY             # Share history between all sessions.
+setopt HIST_EXPIRE_DUPS_FIRST    # Expire duplicate entries first when trimming history.
+setopt HIST_IGNORE_DUPS          # Don't record an entry that was just recorded again.
+setopt HIST_IGNORE_ALL_DUPS      # Delete old recorded entry if new entry is a duplicate.
+setopt HIST_FIND_NO_DUPS         # Do not display a line previously found.
+setopt HIST_IGNORE_SPACE         # Don't record an entry starting with a space.
+setopt HIST_SAVE_NO_DUPS         # Don't write duplicate entries in the history file.
+setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording entry.
+setopt HIST_VERIFY               # Don't execute immediately upon history expansion.
+setopt HIST_BEEP                 # Beep when accessing nonexistent history.
+
 
 ZSH=$HOME/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
 plugins=(autojump git svn python ssh-agent brew brew-cask colored-man docker gnu-utils tmux \
-    httpie jsontools lol vundle taskwarrior)
+    httpie jsontools lol vundle taskwarrior fzf)
 
 export EDITOR=vim
 #export VMWARE_SERVER=vmware-test.oit.duke.edu
@@ -30,6 +46,10 @@ alias setup_vim='git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vu
 alias use_clockworks_test='export CLOCKWORKS_BASE_URL=https://clockworks-test.oit.duke.edu'
 alias use_clockworks_prod='export CLOCKWORKS_BASE_URL=https://clockworks.oit.duke.edu'
 alias use_clockworks_liz='export CLOCKWORKS_BASE_URL=https://clockworks-dev-liz.oit.duke.edu'
+alias dangitbobby='fuck'
+
+# Open shifty stuff
+alias podr="oc get pods | grep Running"
 #alias update_hosts_completion='cmdb-cli.py ssi-windows > ~/.ssi-windows'
 
 
@@ -47,6 +67,7 @@ export PATH=$PATH:/Users/drews/go/bin
 export PATH=$PATH:$HOME/src/sysadmin-scripts
 export PATH=$PATH:$HOME/src/duke-vault-helpers/scripts
 export PATH=$PATH:${HOME}/src/pynetid/scripts
+export PATH=$PATH:/Library/TeX/texbin
 
 ## Iterm2 Integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
@@ -63,6 +84,7 @@ fi
 #zstyle ':completion:*:/Users/drewstinnett/bin/connect_windows.sh:*' hosts $h
 
 export VAULT_ADDR=https://vault-systems.oit.duke.edu
+export VAULT_TOKEN=$(cat ~/.vault-token)
 
 eval "$(thefuck --alias)"
 
@@ -71,7 +93,7 @@ alias vim_plugin_update="vim +PlugUpdate +qall"
 export ANSIBLE_NOCOWS=1
 
 autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /usr/local/bin/vault vault
+complete -o nospace -C ~/bin/vault vault
 
 export CONSUL_HTTP_ADDR=consul-sd.oit.duke.edu:8443
 export CONSUL_HTTP_SSL=true
@@ -84,10 +106,11 @@ export AWS_ACCESS_KEY=$(crudini --get ~/.aws/credentials default aws_access_key_
 export AWS_SECRET_KEY=$(crudini --get ~/.aws/credentials default aws_secret_access_key)
 export DUKE_OPENSHIFT_VAULT_TOKEN=$(cat ~/.vault-token)
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+export PIP_EXTRA_INDEX_URL=https://piepie.oit.duke.edu/simple/
 
 complete -o nospace -C /usr/local/Cellar/terraform/0.11.7/bin/terraform terraform
 
-source <(oc completion zsh)
+#source <(oc completion zsh)
 
 source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
 PROMPT='$(kube_ps1)'$PROMPT
@@ -99,3 +122,5 @@ precmd() {
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+
+complete -o nospace -C /Users/drews/bin/vault vault
