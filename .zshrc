@@ -47,6 +47,7 @@ alias use_clockworks_test='export CLOCKWORKS_BASE_URL=https://clockworks-test.oi
 alias use_clockworks_prod='export CLOCKWORKS_BASE_URL=https://clockworks.oit.duke.edu'
 alias use_clockworks_liz='export CLOCKWORKS_BASE_URL=https://clockworks-dev-liz.oit.duke.edu'
 alias dangitbobby='fuck'
+alias super-oc="oc --as=system:admin"
 
 # Open shifty stuff
 alias podr="oc get pods | grep Running"

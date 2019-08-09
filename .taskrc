@@ -27,7 +27,7 @@ data.location=~/Dropbox/tasks
 #include /usr/local/Cellar/task/2.5.1/share/doc/task/rc/dark-gray-256.theme
 #include /usr/local/Cellar/task/2.5.1/share/doc/task/rc/dark-gray-blue-256.theme
 #include /usr/local/Cellar/task/2.5.1/share/doc/task/rc/solarized-dark-256.theme
-#include /usr/local/Cellar/task/2.5.1/share/doc/task/rc/solarized-light-256.theme
+include /usr/local/Cellar/task/2.5.1/share/doc/task/rc/solarized-light-256.theme
 #include /usr/local/Cellar/task/2.5.1/share/doc/task/rc/no-color.theme
 
 uda.reviewed.type=date

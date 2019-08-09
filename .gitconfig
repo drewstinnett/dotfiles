@@ -14,3 +14,10 @@
 	excludesfile = ~/.gitignore
 [commit]
 	gpgsign = true
+[pager]
+	branch = false
+	tag = false
+    log = false
+    show = false
+[push]
+	followTags = true

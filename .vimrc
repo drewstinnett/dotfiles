@@ -248,6 +248,9 @@ function! XTermPasteBegin()
   return ""
 endfunction
 
+" Spellcheck on .md files
+autocmd BufRead,BufNewFile *.md setlocal spell
+
 " CtrlP
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlPMixed'
