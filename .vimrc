@@ -57,6 +57,7 @@ Plugin 'chase/vim-ansible-yaml'
 Plugin 'Raimondi/delimitMate'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'django.vim'
+Plugin 'hashivim/vim-terraform'
 "Plug 'Gundo'
 Plugin 'acustodioo/vim-tmux'
 Plugin 'Lokaltog/vim-easymotion'
@@ -241,6 +242,11 @@ let g:airline#extensions#tabline#enabled = 1
 
 let &t_SI .= WrapForTmux("\<Esc>[?2004h")
 let &t_EI .= WrapForTmux("\<Esc>[?2004l")
+
+" Terraform
+let g:terraform_align=1
+" let g:terraform_fmt_on_save=1
+
 
 function! XTermPasteBegin()
   set pastetoggle=<Esc>[201~

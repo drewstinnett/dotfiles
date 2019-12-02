@@ -25,7 +25,7 @@ ZSH=$HOME/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
 plugins=(autojump git svn python ssh-agent brew brew-cask colored-man docker gnu-utils tmux \
-    httpie jsontools lol vundle taskwarrior fzf)
+    httpie jsontools lol vundle taskwarrior fzf terraform)
 
 export EDITOR=vim
 #export VMWARE_SERVER=vmware-test.oit.duke.edu
@@ -37,6 +37,8 @@ export EDITOR=vim
 alias ppjson="python -mjson.tool"
 
 alias ag="ag --pager='less -FXRS'"
+alias k="kubectl"
+alias ka='f(){ kubectl "$@" --all-namespaces -o wide;  unset -f f; }; f'
 alias nkssh='ssh -o PubkeyAuthentication=no'
 alias grep='nocorrect grep --color=auto'
 alias whatd_i_do_last_week="task end.after:today-1wk completed rc.detection:off rc.defaultwidth:184"
