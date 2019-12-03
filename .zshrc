@@ -39,6 +39,8 @@ alias ppjson="python -mjson.tool"
 alias ag="ag --pager='less -FXRS'"
 alias k="kubectl"
 alias ka='f(){ kubectl "$@" --all-namespaces -o wide;  unset -f f; }; f'
+alias h="helm"
+alias ha='f(){ helm "$@" --all-namespaces;  unset -f f; }; f'
 alias nkssh='ssh -o PubkeyAuthentication=no'
 alias grep='nocorrect grep --color=auto'
 alias whatd_i_do_last_week="task end.after:today-1wk completed rc.detection:off rc.defaultwidth:184"
