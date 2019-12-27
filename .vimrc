@@ -32,7 +32,9 @@ filetype off                   " required!
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'lifepillar/vim-solarized8'
+Plugin 'noahfrederick/vim-skeleton'
 Plugin 'morhetz/gruvbox'
+Plugin 'towolf/vim-helm'
 " Google code junk
 Plugin 'google/vim-maktaba'
 Plugin 'google/vim-codefmt'
@@ -88,8 +90,8 @@ Plugin 'w0rp/ale'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 let b:ale_fixers = ['autopep8', 'black']
-let g:ale_sign_warning = '🤔'
-let g:ale_sign_error = '🤬'
+"let g:ale_sign_warning = '🤔'
+"let g:ale_sign_error = '🤬'
 
 " Puppet syntax highlighting
 Plugin 'godlygeek/tabular'

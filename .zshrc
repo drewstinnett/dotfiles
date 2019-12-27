@@ -39,6 +39,7 @@ alias ppjson="python -mjson.tool"
 alias ag="ag --pager='less -FXRS'"
 alias k="kubectl"
 alias ka='f(){ kubectl "$@" --all-namespaces -o wide;  unset -f f; }; f'
+alias ks='f(){ kubectl "$@" --namespace kube-system -o wide;  unset -f f; }; f'
 alias h="helm"
 alias ha='f(){ helm "$@" --all-namespaces;  unset -f f; }; f'
 alias nkssh='ssh -o PubkeyAuthentication=no'
