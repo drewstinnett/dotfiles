@@ -108,8 +108,6 @@ export CONSUL_CACERT=~/ca_certs/consul-sd.oit.duke.edu.ca
 
 export KOPS_CLUSTER_NAME=drubernetes.k8s.local
 export KOPS_STATE_STORE=s3://drubernetes-kops-state-store
-export AWS_ACCESS_KEY=$(crudini --get ~/.aws/credentials default aws_access_key_id)
-export AWS_SECRET_KEY=$(crudini --get ~/.aws/credentials default aws_secret_access_key)
 export DUKE_OPENSHIFT_VAULT_TOKEN=$(cat ~/.vault-token)
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 export PIP_EXTRA_INDEX_URL=https://piepie.oit.duke.edu/simple/
