@@ -90,7 +90,9 @@ fi
 #zstyle ':completion:*:/Users/drewstinnett/bin/connect_windows.sh:*' hosts $h
 
 export VAULT_ADDR=https://vault-systems.oit.duke.edu
-export VAULT_TOKEN=$(cat ~/.vault-token)
+if [[ -e ~/.vault-token ]]; then
+    export VAULT_TOKEN=$(cat ~/.vault-token)
+fi
 
 eval "$(thefuck --alias)"
 
