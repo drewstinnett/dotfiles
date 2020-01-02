@@ -13,6 +13,9 @@ set cul " Highligth the current line
 let g:mapleader = ","
 set nohlsearch
 set ruler
+" Better listing of filename with the :b stuff
+set wildmenu
+set wildignore=*.o,*~,*.pyc
 
 
 if exists('+termguicolors')
@@ -26,40 +29,45 @@ set nocompatible
 filetype off                   " required!
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+" Look and feel
 Plugin 'lifepillar/vim-solarized8'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+
+" Misc. Plugins
 Plugin 'noahfrederick/vim-skeleton'
-Plugin 'towolf/vim-helm'
 Plugin 'kien/ctrlp.vim'
-Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-haml'
 Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-markdown'
 
-" These ae for coe autoformatting
+" Plugins fo Golang
+Plugin 'fatih/vim-go'
+
+" These ae for code autoformatting
 Plugin 'google/vim-codefmt'
 Plugin 'google/vim-glaive'
 Plugin 'google/vim-maktaba'
 Plugin 'nvie/vim-flake8'
 Plugin 'python.vim'
 Plugin 'spacehi.vim'
+Plugin 'godlygeek/tabular'
+Plugin 'w0rp/ale'
+let b:ale_fixers = ['autopep8', 'black']
+
+" Plugins for apps
 Plugin 'chase/vim-ansible-yaml'
 Plugin 'django.vim'
 Plugin 'hashivim/vim-terraform'
-Plugin 'godlygeek/tabular'
+Plugin 'tpope/vim-rails'
+Plugin 'towolf/vim-helm'
+Plugin 'rodjek/vim-puppet'
 
 " Syntax checking
 " Make sure pylint or flake8 is installed
-Plugin 'w0rp/ale'
-let b:ale_fixers = ['autopep8', 'black']
 "let g:ale_sign_warning = '🤔'
 "let g:ale_sign_error = '🤬'
 
-" Airline, cool new powerline junks
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-
-" Puppet syntax highlighting
-Plugin 'rodjek/vim-puppet'
 
 call vundle#end()  
 call glaive#Install()
@@ -94,9 +102,6 @@ nnoremap tn :tabnew<CR>
 
 inoremap jj <ESC>
 
-" Better listing of filename with the :b stuff
-set wildmenu
-set wildignore=*.o,*~,*.pyc
 
 map gn :bn<cr>
 map gp :bp<cr>
