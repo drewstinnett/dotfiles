@@ -92,9 +92,10 @@ fi
 export VAULT_ADDR=https://vault-systems.oit.duke.edu
 if [[ -e ~/.vault-token ]]; then
     export VAULT_TOKEN=$(cat ~/.vault-token)
+    export DUKE_OPENSHIFT_VAULT_TOKEN=$(cat ~/.vault-token)
 fi
 
-eval "$(thefuck --alias)"
+which thefuck 2>/dev/null && eval "$(thefuck --alias)"
 
 alias vim_plugin_install="vim +PlugInstall +qall"
 alias vim_plugin_update="vim +PlugUpdate +qall"
@@ -110,7 +111,6 @@ export CONSUL_CACERT=~/ca_certs/consul-sd.oit.duke.edu.ca
 
 export KOPS_CLUSTER_NAME=drubernetes.k8s.local
 export KOPS_STATE_STORE=s3://drubernetes-kops-state-store
-export DUKE_OPENSHIFT_VAULT_TOKEN=$(cat ~/.vault-token)
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 export PIP_EXTRA_INDEX_URL=https://piepie.oit.duke.edu/simple/
 
