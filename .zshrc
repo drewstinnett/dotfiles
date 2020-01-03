@@ -118,8 +118,10 @@ complete -o nospace -C /usr/local/Cellar/terraform/0.11.7/bin/terraform terrafor
 
 #source <(oc completion zsh)
 
-source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
-PROMPT='$(kube_ps1)'$PROMPT
+if [[ -e "/usr/local/opt/kube-ps1/share/kube-ps1.sh" ]]; then
+    source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
+    PROMPT='$(kube_ps1)'$PROMPT
+fi
 
 precmd() {
   # sets the tab title to current dir
