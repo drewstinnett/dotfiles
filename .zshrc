@@ -95,7 +95,7 @@ if [[ -e ~/.vault-token ]]; then
     export DUKE_OPENSHIFT_VAULT_TOKEN=$(cat ~/.vault-token)
 fi
 
-which thefuck 2>/dev/null && eval "$(thefuck --alias)"
+which thefuck &>/dev/null && eval "$(thefuck --alias)"
 
 alias vim_plugin_install="vim +PlugInstall +qall"
 alias vim_plugin_update="vim +PlugUpdate +qall"
