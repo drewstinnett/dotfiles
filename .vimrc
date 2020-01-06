@@ -1,16 +1,16 @@
-set ts=4
-set sw=4
+set tabstop=4
+set shiftwidth=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
 set autoindent
 set incsearch
-set nonu " No numbes on lines
+set nonumber " No numbes on lines
 set encoding=utf-8
-set cul " Highligth the current line
+set cursorline " Highligth the current line
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
-let g:mapleader = ","
+let g:mapleader = ','
 set nohlsearch
 set ruler
 " Better listing of filename with the :b stuff
@@ -27,7 +27,7 @@ endif
 " Vundle stuff
 set nocompatible
 filetype off                   " required!
-set rtp+=~/.vim/bundle/Vundle.vim
+set runtimepath+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " Look and feel
 Plugin 'lifepillar/vim-solarized8'
@@ -45,6 +45,7 @@ Plugin 'tpope/vim-markdown'
 Plugin 'fatih/vim-go'
 
 " These ae for code autoformatting
+Plugin 'hynek/vim-python-pep8-indent'
 Plugin 'google/vim-codefmt'
 Plugin 'google/vim-glaive'
 Plugin 'google/vim-maktaba'
@@ -53,7 +54,7 @@ Plugin 'python.vim'
 Plugin 'spacehi.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'w0rp/ale'
-let b:ale_fixers = ['autopep8', 'black']
+let b:ale_fixers = {'python': ['autopep8', 'black']}
 let ale_fix_on_save=1
 
 " Plugins for apps
@@ -170,7 +171,7 @@ let g:airline#extensions#tabline#enabled = 1
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
-let g:airline_symbols.space = "\ua0"
+let g:airline_symbols.space = '\ua0'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 1
 let g:airline_theme = 'solarized'
