@@ -22,10 +22,12 @@ setopt HIST_BEEP                 # Beep when accessing nonexistent history.
 
 
 ZSH=$HOME/.oh-my-zsh
-source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
-plugins=(autojump git svn python ssh-agent brew brew-cask colored-man docker gnu-utils tmux \
-    httpie jsontools lol vundle taskwarrior fzf terraform)
+plugins=(
+    git svn python ssh-agent docker gnu-utils tmux httpie jsontools lol \
+    vundle taskwarrior fzf terraform iterm2 kubectl kube-ps1
+)
+source $ZSH/oh-my-zsh.sh
 
 export EDITOR=vim
 #export VMWARE_SERVER=vmware-test.oit.duke.edu
@@ -112,14 +114,16 @@ export CONSUL_CACERT=~/ca_certs/consul-sd.oit.duke.edu.ca
 export KOPS_CLUSTER_NAME=drubernetes.k8s.local
 export KOPS_STATE_STORE=s3://drubernetes-kops-state-store
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
-export PIP_EXTRA_INDEX_URL=https://piepie.oit.duke.edu/simple/
+#export PIP_EXTRA_INDEX_URL=https://piepie.oit.duke.edu/simple/
 
 complete -o nospace -C /usr/local/Cellar/terraform/0.11.7/bin/terraform terraform
 
 #source <(oc completion zsh)
 
-source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
-PROMPT='$(kube_ps1)'$PROMPT
+if [[ -e "/usr/local/opt/kube-ps1/share/kube-ps1.sh" ]]; then
+    source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
+    PROMPT='$(kube_ps1)'$PROMPT
+fi
 
 precmd() {
   # sets the tab title to current dir
