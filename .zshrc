@@ -39,6 +39,7 @@ export EDITOR=vim
 alias ppjson="python -mjson.tool"
 
 alias ag="ag --pager='less -FXRS'"
+alias ssh="ssh-iterm2"
 alias k="kubectl"
 alias ka='f(){ kubectl "$@" --all-namespaces -o wide;  unset -f f; }; f'
 alias ks='f(){ kubectl "$@" --namespace kube-system -o wide;  unset -f f; }; f'

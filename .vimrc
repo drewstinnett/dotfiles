@@ -54,6 +54,7 @@ Plugin 'spacehi.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'w0rp/ale'
 let b:ale_fixers = ['autopep8', 'black']
+let ale_fix_on_save=1
 
 " Plugins for apps
 Plugin 'chase/vim-ansible-yaml'
