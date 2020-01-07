@@ -55,6 +55,7 @@ Plugin 'spacehi.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'w0rp/ale'
 let b:ale_fixers = {'python': ['autopep8', 'black']}
+let g:ale_python_autopep8_options = '--aggressive'
 let ale_fix_on_save=1
 
 " Plugins for apps
