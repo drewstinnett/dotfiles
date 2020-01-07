@@ -1,0 +1,18 @@
+{
+	"name": "Solarized dark for shell",
+	"groups": {
+		"mode": { "fg": "solarized:base3", "bg": "solarized:green", "attrs": ["bold"] },
+        "kubernetes_cluster":         { "fg": "gray10", "bg": "darkestblue", "attrs": [] },
+        "kubernetes_cluster:alert":   { "fg": "gray10", "bg": "darkestred",  "attrs": [] },
+        "kubernetes_namespace":       { "fg": "gray10", "bg": "darkestblue", "attrs": [] },
+        "kubernetes_namespace:alert": { "fg": "gray10", "bg": "darkred",     "attrs": [] },
+        "kubernetes:divider":         { "fg": "gray4",  "bg": "darkestblue", "attrs": [] }
+	},
+	"mode_translations": {
+		"vicmd": {
+			"groups": {
+				"mode": { "fg": "solarized:base3", "bg": "solarized:blue", "attrs": ["bold"] }
+			}
+		}
+	}
+}
