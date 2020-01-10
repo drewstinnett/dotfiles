@@ -135,4 +135,8 @@ precmd() {
 
 
 complete -o nospace -C /Users/drews/bin/vault vault
-source /usr/local/lib/python3.7/site-packages/powerline/bindings/zsh/powerline.zsh
+if [[ -e "/usr/local/lib/python3.7/site-packages/powerline/bindings/zsh/powerline.zsh" ]]; then
+    source /usr/local/lib/python3.7/site-packages/powerline/bindings/zsh/powerline.zsh
+elif [[ -e "/usr/local/lib/python3.6/dist-packages/powerline/bindings/zsh/powerline.zsh" ]]; then
+    source /usr/local/lib/python3.6/dist-packages/powerline/bindings/zsh/powerline.zsh
+fi
