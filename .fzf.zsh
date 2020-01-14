@@ -11,7 +11,7 @@ fi
 # Key bindings
 # ------------
 #source "/usr/local/opt/fzf/shell/key-bindings.zsh"
-source "/home/drews/.oh-my-zsh/lib/key-bindings.zsh"
+source "${HOME}/.oh-my-zsh/lib/key-bindings.zsh"
 
 
 _gen_fzf_default_opts() {
