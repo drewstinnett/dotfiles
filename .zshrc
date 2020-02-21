@@ -37,8 +37,10 @@ export EDITOR=vim
 #export FAVORITEHOST=$(lpass show favoritehost --notes)
 
 alias ppjson="python -mjson.tool"
+alias icat="kitty +kitten icat"
 
 alias ag="ag --pager='less -FXRS'"
+alias delete_evicted_pods="kubectl get pods | grep Evicted | awk '{print $1}' | xargs kubectl delete pod"
 alias ssh="ssh-iterm2"
 alias k="kubectl"
 alias ka='f(){ kubectl "$@" --all-namespaces -o wide;  unset -f f; }; f'
@@ -131,7 +133,7 @@ precmd() {
   echo -ne "\e]1;${PWD##*/}\a"
 }
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 
 complete -o nospace -C /Users/drews/bin/vault vault
