@@ -147,7 +147,7 @@ precmd() {
   echo -ne "\e]1;${PWD##*/}\a"
 }
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 
 complete -o nospace -C /Users/drews/bin/vault vault

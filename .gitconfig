@@ -10,6 +10,9 @@
     reflog = delta
     show = delta
 
+[pull]
+    rebase = false
+
 [interactive]
     diffFilter = delta --color-only --features=interactive
 
