@@ -1,21 +1,35 @@
-[alias]
-    pp = !git pull && git push
 [user]
-	name = Drew Stinnett
-	email = drew.stinnett@duke.edu
-    #signingkey = 2C524707F10DC88F350A78FC719FD7B59B142A28
-    signingkey = 17D832F6B6694E31BDEE47156DEF1CE9ADC88467
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
-[core]
-	excludesfile = ~/.gitignore
+  name = Drew Stinnett
+  email = drew@drewlink.com
+[init]
+	defaultBranch = main
+
 [pager]
-	branch = false
-	tag = false
-    log = false
-    show = false
-[push]
-	followTags = true
+    diff = delta
+    log = delta
+    reflog = delta
+    show = delta
+
+[interactive]
+    diffFilter = delta --color-only --features=interactive
+
+[url "git@github.com:"]
+    insteadOf = http://github.com
+    insteadOf = https://github.com
+
+[delta]
+    features = decorations
+    light = true
+    theme = "Solarized (light)"
+
+[delta "interactive"]
+    keep-plus-minus-markers = false
+
+[delta "decorations"]
+    commit-decoration-style = blue ol
+    commit-style = raw
+    file-style = omit
+    hunk-header-decoration-style = blue box
+    hunk-header-file-style = red
+    hunk-header-line-number-style = "#067a00"
+    hunk-header-style = file line-number syntax

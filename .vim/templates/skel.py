@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import sys
 import argparse
+import logging
 
 
 def parse_args():
@@ -18,7 +19,10 @@ def parse_args():
 
 def main():
     args = parse_args()
-    print(args)
+    if args.verbose:
+        logging.basicConfig(level=logging.DEBUG)
+    else:
+        logging.basicConfig(level=logging.INFO)
     @CURSOR@
     return 0
 

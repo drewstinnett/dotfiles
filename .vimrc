@@ -54,7 +54,7 @@ Plugin 'python.vim'
 Plugin 'spacehi.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'w0rp/ale'
-let b:ale_fixers = {'python': ['autopep8', 'black'], 'json': ['jq']}
+let b:ale_fixers = {'python': ['autopep8', 'black'], 'json': ['jq'], 'yaml': ['trim_whitespace']}
 let g:ale_python_autopep8_options = '--aggressive'
 let ale_fix_on_save=1
 
@@ -133,7 +133,7 @@ colorscheme solarized8
 "
 " Highlight past 80 characters
 autocmd BufEnter * highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-autocmd BufEnter * match OverLength /\%79v.*/
+"autocmd BufEnter * match OverLength /\%79v.*/
 
 " Really write this junk
 cmap w!! w !sudo tee % >/dev/null       
@@ -150,7 +150,10 @@ let g:Powerline_symbols = 'fancy'
 
 " let g:syntastic_yaml_checkers = ['yamllint']
 " let g:syntastic_python_checkers = ['flake8']
-
+"let g:ale_linters = { 'go': ['gofmt', 'golint', 'go vet', 'gopls', 'golangci-lint'] }
+let g:ale_linters = { 'go': ['gofmt', 'golint', 'go vet', 'gopls'] }
+let g:go_fmt_command = "goimports"
+let g:ale_go_golangci_lint_options  = ""
 "autocmd BufNewFile,BufRead *.py compiler nose
 
 augroup autoformat_settings

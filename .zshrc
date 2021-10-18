@@ -25,7 +25,7 @@ ZSH=$HOME/.oh-my-zsh
 unsetopt correct_all
 plugins=(
     git svn python ssh-agent docker gnu-utils tmux httpie jsontools lol \
-    vundle taskwarrior fzf terraform iterm2 kubectl kube-ps1
+    vundle taskwarrior fzf terraform iterm2 kubectl kube-ps1 vi-mode
 )
 source $ZSH/oh-my-zsh.sh
 
@@ -37,9 +37,11 @@ export EDITOR=vim
 #export FAVORITEHOST=$(lpass show favoritehost --notes)
 
 alias ppjson="python -mjson.tool"
+alias tp="/usr/local/opt/taskpoet/bin/taskpoet"
 
 alias ag="ag --pager='less -FXRS'"
-alias ssh="ssh-iterm2"
+#alias ssh="ssh-iterm2"
+alias icat="kitty +kitten icat"
 alias k="kubectl"
 alias ka='f(){ kubectl "$@" --all-namespaces -o wide;  unset -f f; }; f'
 alias ks='f(){ kubectl "$@" --namespace kube-system -o wide;  unset -f f; }; f'
@@ -60,6 +62,14 @@ alias super-oc="oc --as=system:admin"
 # Open shifty stuff
 alias podr="oc get pods | grep Running"
 #alias update_hosts_completion='cmdb-cli.py ssi-windows > ~/.ssi-windows'
+scd() {
+  target=$(/usr/local/bin/sourceseedy fzf $1)
+  cd $target
+}
+#scd() {
+  #target=$(/tmp/sourceseedy fzf $1)
+  #cd $target
+#}
 
 
 ## Setup PATH
@@ -77,6 +87,7 @@ export PATH=$PATH:$HOME/src/sysadmin-scripts
 export PATH=$PATH:$HOME/src/duke-vault-helpers/scripts
 export PATH=$PATH:${HOME}/src/pynetid/scripts
 export PATH=$PATH:/Library/TeX/texbin
+export PATH="${PATH}:${HOME}/.krew/bin"
 
 ## Iterm2 Integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
@@ -126,6 +137,11 @@ if [[ -e "/usr/local/opt/kube-ps1/share/kube-ps1.sh" ]]; then
     PROMPT='$(kube_ps1)'$PROMPT
 fi
 
+cover () { 
+    t="/tmp/go-cover.$$.tmp"
+    go test -coverprofile=$t $@ && go tool cover -html=$t && unlink $t
+}
+
 precmd() {
   # sets the tab title to current dir
   echo -ne "\e]1;${PWD##*/}\a"
@@ -140,3 +156,6 @@ if [[ -e "/usr/local/lib/python3.7/site-packages/powerline/bindings/zsh/powerlin
 elif [[ -e "/usr/local/lib/python3.6/dist-packages/powerline/bindings/zsh/powerline.zsh" ]]; then
     source /usr/local/lib/python3.6/dist-packages/powerline/bindings/zsh/powerline.zsh
 fi
+bindkey -v
+
+complete -o nospace -C /usr/local/bin/vault vault
