@@ -1,5 +1,6 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR --path PATH:/Users/drews/bin/\x1e/usr/local/bin\x1e/usr/bin\x1e/bin\x1e/usr/sbin\x1e/sbin\x1e/opt/X11/bin\x1e/opt/puppetlabs/pdk/bin\x1e/Library/Apple/usr/bin\x1e/usr/local/go/bin\x1e/usr/local/MacGPG2/bin\x1e/Applications/Wireshark\x2eapp/Contents/MacOS
 SETUVAR __fish_initialized:3100
 SETUVAR _fish_abbr_cd:z
 SETUVAR _fish_abbr_k:kubectl
@@ -36,3 +37,4 @@ SETUVAR fish_pager_color_completion:green
 SETUVAR fish_pager_color_description:B3A06D
 SETUVAR fish_pager_color_prefix:cyan\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
+SETUVAR fish_user_paths:/Users/drews/go/bin\x1e/Users/drews/bin
