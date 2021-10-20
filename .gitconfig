@@ -1,6 +1,8 @@
-[user]
-  name = Drew Stinnett
-  email = drew.stinnett@duke.edu
+[includeIf "gitdir:github.com/"]
+  path = .gitconfig-home
+[includeIf "gitdir:*oit.duke.edu/"]
+  path = .gitconfig-work
+
 [init]
 	defaultBranch = main
 
