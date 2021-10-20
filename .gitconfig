@@ -3,6 +3,9 @@
 [includeIf "gitdir:*oit.duke.edu/"]
   path = .gitconfig-work
 
+[user]
+  signingkey = 20549077916C42A58D25C58796978F2168AB5946
+
 [init]
 	defaultBranch = main
 
@@ -38,3 +41,7 @@
     hunk-header-file-style = red
     hunk-header-line-number-style = "#067a00"
     hunk-header-style = file line-number syntax
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg
