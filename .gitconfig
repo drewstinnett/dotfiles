@@ -1,9 +1,9 @@
-[includeIf "gitdir:github.com/"]
-  path = .gitconfig-home
 [includeIf "gitdir:*oit.duke.edu/"]
   path = .gitconfig-work
 
 [user]
+  name = "Drew Stinnett"
+  email = "drew@drewlink.com"
   signingkey = 20549077916C42A58D25C58796978F2168AB5946
 
 [init]
