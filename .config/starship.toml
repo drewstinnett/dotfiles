@@ -1,0 +1,11 @@
+add_newline = false
+
+[kubernetes]
+format = 'on [⛵ $context \($namespace\)](dimmed green) '
+disabled = true
+
+#[golang]
+#disabled = true
+
+
+
