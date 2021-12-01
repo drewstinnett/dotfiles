@@ -3,8 +3,10 @@
 SETUVAR --path PATH:/Users/drews/bin/\x1e/usr/local/bin\x1e/usr/bin\x1e/bin\x1e/usr/sbin\x1e/sbin\x1e/opt/X11/bin\x1e/opt/puppetlabs/pdk/bin\x1e/Library/Apple/usr/bin\x1e/usr/local/go/bin\x1e/usr/local/MacGPG2/bin\x1e/Applications/Wireshark\x2eapp/Contents/MacOS
 SETUVAR __fish_initialized:3100
 SETUVAR _fish_abbr_cd:z
+SETUVAR _fish_abbr_find:fd
 SETUVAR _fish_abbr_k:kubectl
 SETUVAR _fish_abbr_ls:exa
+SETUVAR _fish_abbr_ltr:exa\x20\x2dsnew\x20\x2dl
 SETUVAR _fisher_PatrickF1_2F_fzf_2E_fish_files:/Users/drews/\x2econfig/fish/functions/_fzf_configure_bindings_help\x2efish\x1e/Users/drews/\x2econfig/fish/functions/_fzf_extract_var_info\x2efish\x1e/Users/drews/\x2econfig/fish/functions/_fzf_preview_file\x2efish\x1e/Users/drews/\x2econfig/fish/functions/_fzf_report_file_type\x2efish\x1e/Users/drews/\x2econfig/fish/functions/_fzf_search_directory\x2efish\x1e/Users/drews/\x2econfig/fish/functions/_fzf_search_git_log\x2efish\x1e/Users/drews/\x2econfig/fish/functions/_fzf_search_git_status\x2efish\x1e/Users/drews/\x2econfig/fish/functions/_fzf_search_history\x2efish\x1e/Users/drews/\x2econfig/fish/functions/_fzf_search_variables\x2efish\x1e/Users/drews/\x2econfig/fish/functions/_fzf_wrapper\x2efish\x1e/Users/drews/\x2econfig/fish/functions/fzf_configure_bindings\x2efish\x1e/Users/drews/\x2econfig/fish/conf\x2ed/fzf\x2efish\x1e/Users/drews/\x2econfig/fish/completions/fzf_configure_bindings\x2efish
 SETUVAR _fisher_jorgebucaran_2F_fisher_files:/Users/drews/\x2econfig/fish/functions/fisher\x2efish\x1e/Users/drews/\x2econfig/fish/completions/fisher\x2efish
 SETUVAR _fisher_plugins:jorgebucaran/fisher\x1ePatrickF1/fzf\x2efish
