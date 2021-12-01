@@ -3,3 +3,4 @@
 .stevedore/logs
 .stevedore/backup
 *.pyc
+go-carpet*

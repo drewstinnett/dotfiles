@@ -1,10 +1,31 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR --export FZF_DEFAULT_OPTS:\x2d\x2dcycle\x20\x2d\x2dheight\x3d90\x25\x20\x2d\x2dpreview\x2dwindow\x3dwrap\x20\x2d\x2dmarker\x3d\x22\x2a\x22\x20\x2d\x2dcolor\x20fg\x3a\x2d1\x2cbg\x3a\x2d1\x2chl\x3a33\x2cfg\x2b\x3a235\x2cbg\x2b\x3a\x2d1\x2chl\x2b\x3a33\x20\x2d\x2dcolor\x20info\x3a136\x2cprompt\x3a136\x2cpointer\x3a234\x2cmarker\x3a234\x2cspinner\x3a136
 SETUVAR --path PATH:/Users/drews/bin/\x1e/usr/local/bin\x1e/usr/bin\x1e/bin\x1e/usr/sbin\x1e/sbin\x1e/opt/X11/bin\x1e/opt/puppetlabs/pdk/bin\x1e/Library/Apple/usr/bin\x1e/usr/local/go/bin\x1e/usr/local/MacGPG2/bin\x1e/Applications/Wireshark\x2eapp/Contents/MacOS
 SETUVAR __fish_initialized:3100
+SETUVAR _fish_abbr_cat:bat
 SETUVAR _fish_abbr_cd:z
 SETUVAR _fish_abbr_k:kubectl
+SETUVAR _fish_abbr_kd:kubectl\x20describe
+SETUVAR _fish_abbr_kdebug:kubectl\x20run\x20\x2di\x20\x2dt\x20debug\x20\x2d\x2drm\x20\x2d\x2dimage\x3dcaarlos0/debug\x20\x2d\x2drestart\x3dNever
+SETUVAR _fish_abbr_kdp:kubectl\x20describe\x20po
+SETUVAR _fish_abbr_kdrain:kubectl\x20drain\x20\x2d\x2dignore\x2ddaemonsets\x20\x2d\x2ddelete\x2dlocal\x2ddata
+SETUVAR _fish_abbr_ke:kubectl\x20edit
+SETUVAR _fish_abbr_kex:kubectl\x20exec\x20\x2dit
+SETUVAR _fish_abbr_kfails:kubectl\x20get\x20po\x20\x2dowide\x20\x2d\x2dall\x2dnamespaces\x20\x7c\x20grep\x20\x220/\x22\x20\x7c\x20tee\x20/dev/tty\x20\x7c\x20wc\x20\x2dl
+SETUVAR _fish_abbr_kg:kubectl\x20get
+SETUVAR _fish_abbr_kga:kubectl\x20get\x20\x2d\x2dall\x2dnamespaces
+SETUVAR _fish_abbr_kgno:kubectl\x20get\x20no\x20\x2d\x2dsort\x2dby\x3d\x2emetadata\x2ecreationTimestamp
+SETUVAR _fish_abbr_kgp:kubectl\x20get\x20po
+SETUVAR _fish_abbr_kimg:kubectl\x20get\x20deployment\x20\x2d\x2doutput\x3djsonpath\x3d\x27\x7b\x2espec\x2etemplate\x2espec\x2econtainers\x5b\x2a\x5d\x2eimage\x7d\x27
+SETUVAR _fish_abbr_kn:kubens
+SETUVAR _fish_abbr_knrunning:kubectl\x20get\x20pods\x20\x2d\x2dfield\x2dselector\x3dstatus\x2ephase\x21\x3dRunning
+SETUVAR _fish_abbr_krm:kubectl\x20delete
+SETUVAR _fish_abbr_kvs:kubectl\x20view\x2dsecret
+SETUVAR _fish_abbr_kx:kubectx
 SETUVAR _fish_abbr_ls:exa
+SETUVAR _fish_abbr_ltr:exa\x20\x2dsnew\x20\x2dl
+SETUVAR _fish_abbr_sk:kubectl\x20\x2dn\x20kube\x2dsystem
 SETUVAR _fisher_PatrickF1_2F_fzf_2E_fish_files:/Users/drews/\x2econfig/fish/functions/_fzf_configure_bindings_help\x2efish\x1e/Users/drews/\x2econfig/fish/functions/_fzf_extract_var_info\x2efish\x1e/Users/drews/\x2econfig/fish/functions/_fzf_preview_file\x2efish\x1e/Users/drews/\x2econfig/fish/functions/_fzf_report_file_type\x2efish\x1e/Users/drews/\x2econfig/fish/functions/_fzf_search_directory\x2efish\x1e/Users/drews/\x2econfig/fish/functions/_fzf_search_git_log\x2efish\x1e/Users/drews/\x2econfig/fish/functions/_fzf_search_git_status\x2efish\x1e/Users/drews/\x2econfig/fish/functions/_fzf_search_history\x2efish\x1e/Users/drews/\x2econfig/fish/functions/_fzf_search_variables\x2efish\x1e/Users/drews/\x2econfig/fish/functions/_fzf_wrapper\x2efish\x1e/Users/drews/\x2econfig/fish/functions/fzf_configure_bindings\x2efish\x1e/Users/drews/\x2econfig/fish/conf\x2ed/fzf\x2efish\x1e/Users/drews/\x2econfig/fish/completions/fzf_configure_bindings\x2efish
 SETUVAR _fisher_jorgebucaran_2F_fisher_files:/Users/drews/\x2econfig/fish/functions/fisher\x2efish\x1e/Users/drews/\x2econfig/fish/completions/fisher\x2efish
 SETUVAR _fisher_plugins:jorgebucaran/fisher\x1ePatrickF1/fzf\x2efish
@@ -37,4 +58,4 @@ SETUVAR fish_pager_color_completion:green
 SETUVAR fish_pager_color_description:B3A06D
 SETUVAR fish_pager_color_prefix:cyan\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
-SETUVAR fish_user_paths:/Users/drews/go/bin\x1e/Users/drews/bin
+SETUVAR fish_user_paths:/usr/local/sbin\x1e/Users/drews/go/bin\x1e/Users/drews/bin

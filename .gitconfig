@@ -9,6 +9,9 @@
 [init]
 	defaultBranch = main
 
+[alias]
+  delete-tag = !sh -c 'git tag -d $1 && git push origin :refs/tags/$1' -
+
 [pager]
     diff = delta
     log = delta
@@ -24,6 +27,10 @@
 [url "git@github.com:"]
     insteadOf = http://github.com
     insteadOf = https://github.com
+
+[url "git@gitlab.com:"]
+    insteadOf = http://gitlab.com
+    insteadOf = https://gitlab.com
 
 [url "git@git-internal.oit.duke.edu:"]
     insteadOf = http://git-internal.oit.duke.edu
