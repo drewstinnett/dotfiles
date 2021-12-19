@@ -12,6 +12,7 @@ SETUVAR _fish_abbr_kdebug:kubectl\x20run\x20\x2di\x20\x2dt\x20debug\x20\x2d\x2dr
 SETUVAR _fish_abbr_kdp:kubectl\x20describe\x20po
 SETUVAR _fish_abbr_kdrain:kubectl\x20drain\x20\x2d\x2dignore\x2ddaemonsets\x20\x2d\x2ddelete\x2dlocal\x2ddata
 SETUVAR _fish_abbr_ke:kubectl\x20edit
+SETUVAR _fish_abbr_keti:kubectl\x20exec\x20\x2dit
 SETUVAR _fish_abbr_kex:kubectl\x20exec\x20\x2dit
 SETUVAR _fish_abbr_kfails:kubectl\x20get\x20po\x20\x2dowide\x20\x2d\x2dall\x2dnamespaces\x20\x7c\x20grep\x20\x220/\x22\x20\x7c\x20tee\x20/dev/tty\x20\x7c\x20wc\x20\x2dl
 SETUVAR _fish_abbr_kg:kubectl\x20get
