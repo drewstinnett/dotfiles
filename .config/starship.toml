@@ -126,3 +126,9 @@ command = "echo $VAULT_ADDR"
 when = "[ ! -z $VAULT_ADDR ]"
 symbol = '🔐'
 format = "[$symbol $output]($style) "
+description = "VAULT_ADDR is set to a specific address"
+
+[custom.vault_token]
+command = "echo Ⓣ"
+when = "[ ! -z $VAULT_TOKEN ]"
+format = '$output '
