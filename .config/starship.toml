@@ -132,3 +132,10 @@ description = "VAULT_ADDR is set to a specific address"
 command = "echo Ⓣ"
 when = "[ ! -z $VAULT_TOKEN ]"
 format = '$output '
+
+[custom.op]
+command = "echo (math -s0 \\($OP_EXPIRATION_TIME - (date -u +%s)\\) / 60)m"
+when = "[ ! -z $OP_EXPIRATION_TIME ] && [ (math -s0 \\($OP_EXPIRATION_TIME - (date -u +%s)\\) / 60) -gt 0 ]"
+symbol = '1️⃣ '
+format = "[$symbol $output]($style) "
+description = "1Password is logged in"
