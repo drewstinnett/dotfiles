@@ -1,6 +1,6 @@
 ---
 'https://cmdb.oit.duke.edu':
-  token: $ vault read -field token secret/shared_service_accounts/cmdb
+  token: $ vault kv get -field=token ssi-systems/kv/shared_service_accounts/cmdb
   fresh_time: 24h
-  username: vault read -field username secret/shared_service_accounts/cmdb
-  password: $ vault read -field password secret/shared_service_accounts/cmdb
+  username: $ vault kv get -field=username ssi-systems/kv/shared_service_accounts/cmdb
+  password: $ vault kv get -field=password ssi-systems/kv/shared_service_accounts/cmdb

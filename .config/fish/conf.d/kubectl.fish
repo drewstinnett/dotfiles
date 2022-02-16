@@ -1,6 +1,8 @@
 
 abbr -a kx kubectx
 abbr -a kn kubens
+abbr -a superk 'kubectl --as=system:admin'
+abbr -a superkubectl 'kubectl --as=system:admin'
 
 abbr -a k kubectl
 abbr -a sk 'kubectl -n kube-system'
