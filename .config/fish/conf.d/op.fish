@@ -1,5 +1,5 @@
 function op_login
-    set tok (op signin dukeu --raw)
+    set tok (op signin --account dukeu --raw)
     if [ $status -eq 0 ]
       echo "Tight, you are logged in 😁"
       set -Ux OP_SESSION_dukeu $tok
@@ -19,7 +19,7 @@ function op_logout
 end
 
 function op_login_home
-    set tok (op signin my --raw)
+    set tok (op signin --account my --raw)
     if [ $status -eq 0 ]
       echo "Tight, you are logged in 😁"
       set -Ux OP_SESSION_my $tok
