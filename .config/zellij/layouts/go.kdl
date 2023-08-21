@@ -8,16 +8,41 @@ layout {
             plugin location="zellij:status-bar"
         }
     }
+    tab_template name="strider_tab" {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        pane split_direction="Vertical" {
+            pane size="15%" {
+                // TODO: when we support sending CWD to plugins, this should start in ./zellij-derver
+                plugin location="zellij:strider"
+            }
+            children
+        }
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+
     tab split_direction="vertical" name="Git" {
-      pane split_direction="horizontal"
+      pane split_direction="horizontal" size="70%"
       pane split_direction="horizontal" {
-        pane split_direction="horizontal" command="git" {
-          args "diff"
+        pane split_direction="horizontal" name="status" command="git" {
+          args "status" "-s"
         }
         pane split_direction="horizontal" command="git" {
           args "lg"
         }
       }
+    }
+    tab name="Go" split_direction="vertical" {
+      pane command="go" {
+        args "test" "./..."
+      }
+      pane command="go-carpet" {
+        args "-summary"
+      }
+
     }
     tab focus=true name="Main"
     tab name="CLI"

@@ -2,6 +2,7 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
     starship init fish | source
     zoxide init fish | source
+    set -gx EDITOR nvim
 
     fish_vi_key_bindings
     fzf_configure_bindings --directory=\cf
