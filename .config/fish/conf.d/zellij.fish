@@ -6,5 +6,7 @@ end
 function sesh
     if test -f ./go.mod
         goup
+    else
+	zellij
     end
 end
