@@ -21,6 +21,8 @@ config.font = wezterm.font 'Source Code Pro for Powerline'
 -- config.use_fancy_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
 config.show_new_tab_button_in_tab_bar = false
+config.hide_mouse_cursor_when_typing = false
+config.default_cursor_style = 'BlinkingBar'
 
 config.window_frame = {
   -- The font used in the tab bar.
@@ -102,6 +104,21 @@ config.colors = {
     },
   },
 }
+
+config.keys = {
+    {key="P", mods="CTRL",
+     action=wezterm.action{QuickSelectArgs={
+       patterns={
+          "https?://\\S+"
+       },
+       action = wezterm.action_callback(function(window, pane)
+          local url = window:get_selection_text_for_pane(pane)
+          wezterm.log_info("opening: " .. url)
+          wezterm.open_with(url)
+       end)
+     }}
+   },
+  }
 
 
 
