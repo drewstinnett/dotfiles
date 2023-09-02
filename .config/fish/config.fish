@@ -1,3 +1,4 @@
+
 if status is-interactive
     # Commands to run in interactive sessions can go here
     starship init fish | source
@@ -18,3 +19,13 @@ if status is-interactive
 
     set --export FZF_DEFAULT_OPTS '--cycle --height=90% --preview-window=wrap --marker="*" --color fg:-1,bg:-1,hl:33,fg+:235,bg+:-1,hl+:33 --color info:136,prompt:136,pointer:234,marker:234,spinner:136'
 end
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+set --export --prepend PATH "/Users/drews/.rd/bin"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+
+#fish_add_path ~/.gobrew/current/bin
+#fish_add_path ~/.gobrew/bin
+#set --export GOROOT "$HOME/.gobrew/current/go"
+#status --is-login; and status --is-interactive; and exec byobu-launcher
+
