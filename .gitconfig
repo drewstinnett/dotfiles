@@ -11,6 +11,7 @@
 
 [alias]
   delete-tag = !sh -c 'git tag -d $1 && git push origin :refs/tags/$1' -
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
 
 [pager]
     diff = delta
