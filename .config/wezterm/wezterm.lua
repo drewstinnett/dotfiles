@@ -23,6 +23,7 @@ config.hide_tab_bar_if_only_one_tab = true
 config.show_new_tab_button_in_tab_bar = false
 config.hide_mouse_cursor_when_typing = false
 config.default_cursor_style = 'BlinkingBar'
+config.selection_word_boundary = " \t\n={[}]()\"'"
 
 config.window_frame = {
   -- The font used in the tab bar.
