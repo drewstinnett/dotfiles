@@ -58,3 +58,5 @@
     hunk-header-style = file line-number syntax
 [commit]
 	gpgsign = true
+[core]
+	excludesfile = /Users/drews/.gitignore

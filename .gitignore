@@ -4,3 +4,4 @@
 .stevedore/backup
 *.pyc
 go-carpet*
+.vscode/
