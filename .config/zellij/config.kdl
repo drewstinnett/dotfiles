@@ -206,8 +206,10 @@ plugins {
 
 ui {
     pane_frames {
+        // hide_session_name true
         rounded_corners true
     }
+
 }
 
 // Toggle between having pane frames around the panes

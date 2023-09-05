@@ -10,3 +10,11 @@ function sesh
 	zellij
     end
 end
+
+#if status is-interactive
+    #if test -f ./go.mod
+        #goup
+    #else
+        #eval (zellij setup --generate-auto-start fish | string collect)
+    #end
+#end
