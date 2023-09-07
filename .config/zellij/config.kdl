@@ -230,27 +230,33 @@ pane_frames false
 // For more examples, see: https://github.com/zellij-org/zellij/tree/main/example/themes
 // Once these themes are defined, one of them should to be selected in the "theme" section of this file
 //
-// themes {
-//     dracula {
-//         fg 248 248 242
-//         bg 40 42 54
-//         red 255 85 85
-//         green 80 250 123
-//         yellow 241 250 140
-//         blue 98 114 164
-//         magenta 255 121 198
-//         orange 255 184 108
-//         cyan 139 233 253
-//         black 0 0 0
-//         white 255 255 255
-//     }
-// }
+themes {
+    drew {
+
+      // bg 253 246 227
+      bg "#cb4b16"
+      fg 101 123 131 // bottom tab thing
+      red "#eee8d5"
+      yellow "#b58900"
+      blue "#268bd2"
+      magenta "#d33682"
+      // orange "#cb4b16"
+      orange "#073642"
+      cyan "#2aa198"
+      green "#859900" // Highlighted tab
+      black "#fdf6e3" // Top border behind the tabs
+      white "#6c71c4" // Bottom and top left text, all bottom text when operating ctrl
+
+      // black 7 54 66
+
+    }
+}
 
 // Choose the theme that is specified in the themes section.
 // Default: default
 //
 // theme "default"
-theme "catppuccin-latte"
+theme "drew"
 // theme "solarized-light"
 // theme "gruvbox-light"
 
