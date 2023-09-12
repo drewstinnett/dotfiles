@@ -119,7 +119,16 @@ config.keys = {
        end)
      }}
    },
-  }
+   {
+    key = 't',
+    mods = 'CMD',
+    action = wezterm.action.SpawnCommandInNewTab {
+       cwd = wezterm.home_dir
+    },
+  },
+
+}
+
 
 
 
