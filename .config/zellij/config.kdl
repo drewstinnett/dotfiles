@@ -232,15 +232,12 @@ pane_frames false
 //
 themes {
     drew {
-
-      // bg 253 246 227
       bg "#cb4b16"
       fg 101 123 131 // bottom tab thing
       red "#eee8d5"
       yellow "#b58900"
       blue "#268bd2"
       magenta "#d33682"
-      // orange "#cb4b16"
       orange "#073642"
       cyan "#2aa198"
       green "#859900" // Highlighted tab
@@ -250,14 +247,28 @@ themes {
       // black 7 54 66
 
     }
+
+    solarized-light {
+        fg 101 123 131
+        bg 253 246 227
+        black 7 54 66
+        red 220 50 47
+        green 133 153 0
+        yellow 181 137 0
+        blue 38 139 210
+        magenta 211 54 130
+        cyan 42 161 152
+        white 238 232 213
+        orange 203 75 22
+    }
 }
 
 // Choose the theme that is specified in the themes section.
 // Default: default
 //
 // theme "default"
-theme "drew"
-// theme "solarized-light"
+// theme "drew"
+theme "solarized-light"
 // theme "gruvbox-light"
 
 // The name of the default layout to load on startup
@@ -314,7 +325,8 @@ copy_on_select false
 // Path to the default editor to use to edit pane scrollbuffer
 // Default: $EDITOR or $VISUAL
 //
-// scrollback_editor "/usr/bin/vim"
+scrollback_editor "nvim"
+
 
 // When attaching to an existing session with other users,
 // should the session be mirrored (true)

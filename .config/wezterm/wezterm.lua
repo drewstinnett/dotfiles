@@ -5,6 +5,7 @@ if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
+config.window_decorations = "RESIZE"
 config.color_scheme = 'Solarized Light (Gogh)'
 config.font_size = 14.0
 config.font = wezterm.font 'Source Code Pro for Powerline'
@@ -20,6 +21,19 @@ config.window_frame = {
   active_titlebar_bg = '#FDF6E3',
   inactive_titlebar_bg = '#D6D1BC',
 }
+
+config.ssh_domains = {
+  {
+    -- This name identifies the domain
+    name = 'home',
+    -- The hostname or address to connect to. Will be used to match settings
+    -- from your ssh config file
+    remote_address = 'h.drewlink.com',
+    -- The username to use on the remote host
+    username = 'drews',
+  },
+}
+
 
 config.colors = {
   tab_bar = {
