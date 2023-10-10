@@ -159,3 +159,7 @@ fi
 bindkey -v
 
 complete -o nospace -C /usr/local/bin/vault vault
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/drews/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)

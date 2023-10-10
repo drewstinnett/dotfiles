@@ -11,6 +11,10 @@ function sesh
     end
 end
 
+function morning_sesh
+	zellij attach work; or zellij --layout work
+end
+
 #if status is-interactive
     #if test -f ./go.mod
         #goup

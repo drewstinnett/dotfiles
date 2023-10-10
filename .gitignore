@@ -5,3 +5,5 @@
 *.pyc
 go-carpet*
 .vscode/
+THOUGHTS.txt
+.DS_Store
