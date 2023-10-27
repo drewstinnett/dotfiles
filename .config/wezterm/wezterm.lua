@@ -22,6 +22,19 @@ config.window_frame = {
   inactive_titlebar_bg = '#D6D1BC',
 }
 
+config.mouse_bindings = {
+  {
+    event = { Down = { streak = 3, button = 'Left' } },
+    action = wezterm.action.SelectTextAtMouseCursor 'SemanticZone',
+    mods = 'NONE',
+  },
+  {
+    event = { Down = { streak = 2, button = 'Left' } },
+    action = wezterm.action.SelectTextAtMouseCursor 'Cell',
+    mods = 'NONE',
+  },
+}
+
 config.ssh_domains = {
   {
     -- This name identifies the domain
