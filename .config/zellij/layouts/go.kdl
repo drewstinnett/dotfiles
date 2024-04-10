@@ -24,26 +24,6 @@ layout {
         }
     }
 
-    tab split_direction="vertical" name="Git" {
-      pane split_direction="horizontal" size="70%"
-      pane split_direction="horizontal" {
-        pane split_direction="horizontal" name="status" command="git" {
-          args "status" "-s"
-        }
-        pane split_direction="horizontal" command="git" {
-          args "lg"
-        }
-      }
-    }
-    tab name="Go" split_direction="vertical" {
-      pane command="go" {
-        args "test" "./..."
-      }
-      pane command="go-carpet" {
-        args "-summary"
-      }
-
-    }
     tab focus=true name="Main"
     tab name="CLI"
 }
