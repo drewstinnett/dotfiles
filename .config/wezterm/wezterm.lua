@@ -1,6 +1,7 @@
 -- Pull in the wezterm API
 local wezterm = require 'wezterm'
 local config = {}
+local act = wezterm.action
 if wezterm.config_builder then
   config = wezterm.config_builder()
 end
@@ -14,6 +15,7 @@ config.show_new_tab_button_in_tab_bar = false
 config.hide_mouse_cursor_when_typing = false
 config.default_cursor_style = 'BlinkingBar'
 config.selection_word_boundary = " \t\n={[}]()\"'"
+config.window_close_confirmation = 'AlwaysPrompt'
 
 config.window_frame = {
   font = wezterm.font { family = 'Roboto', weight = 'Bold' },
@@ -95,6 +97,7 @@ config.colors = {
   },
 }
 
+
 config.keys = {
     {
       key = "P", mods="CTRL",
@@ -123,10 +126,29 @@ config.keys = {
       key = 'p', mods = 'SHIFT|CMD',
       action = wezterm.action.ActivateCommandPalette,
     },
-
-
-
+    {
+      key = '.', mods = 'CMD',
+      action = act.EmitEvent 'trigger-password-input'
+    },
+    {
+      key = ',', mods = 'CMD',
+      action = act.EmitEvent 'trigger-ssh-key-input'
+    },
 }
+
+wezterm.on('trigger-ssh-key-input', function(window, pane)
+  local success, stdout, stderr = wezterm.run_child_process {
+    '/opt/homebrew/bin/op', 'item', 'get', '--reveal', '--fields', 'password', 'Admin-Serv Personal SSH Key'
+  }
+  pane:send_text(stdout)
+end)
+
+wezterm.on('trigger-password-input', function(window, pane)
+  local success, stdout, stderr = wezterm.run_child_process {
+    '/opt/homebrew/bin/op', 'item', 'get', '--reveal', '--fields', 'password', 'drews-p admin account'
+  }
+  pane:send_text(stdout)
+end)
 
 -- and finally, return the configuration to wezterm
 return config
